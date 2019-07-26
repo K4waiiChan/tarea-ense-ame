@@ -1,0 +1,63 @@
+<div class="card">
+  <div class="card-body">
+    <h2 class="text-center">Formulario de Registro</h2><br>
+    <form [formGroup]="signInFormgroup">
+      <div class="row">
+        <div class="col">
+          <input type="text" class="form-control" [ngClass]="getValidationClassName('username')" formControlName="username" placeholder="Nombre de usuario" required>
+          <div class="invalid-feedback">El nombre de usuario es requerido</div>
+        </div>
+        <div class="col">
+          <input type="email" class="form-control" [ngClass]="getValidationClassName('email')" formControlName="email" placeholder="Email">
+          <div class="invalid-feedback">El email es requerido</div>
+        </div>
+      </div><br>
+      <div class="row">
+        <div class="col">
+          <input type="password" class="form-control" [ngClass]="getValidationClassName('password')"  formControlName="password" placeholder="Contraseña">
+          <div class="invalid-feedback">la contraseña debe contener almenos 8 caracteres, 1 letra mayuscula, 1 letra minuscula, 1 numero y 1 caracter especial. No puede contener espacios</div>
+        </div>
+        <div class="col">
+          <input type="password" class="form-control" [ngClass]="getValidationClassName('repeatPassword')"  formControlName="repeatPassword" placeholder="Repita su Contraseña">
+          <div class="invalid-feedback">La contraseña debe contener almenos 8 caracteres, 1 letra mayuscula, 1 letra minuscula, 1 numero y 1 caracter especial. No puede contener espacios</div>
+        </div>
+      </div><br>
+      <div class="row">
+        <div class="col">
+          <input type="text" class="form-control" [ngClass]="getValidationClassName('name')"  formControlName="name" placeholder="Nombre">
+          <div class="invalid-feedback">El nombre es requerido</div>
+        </div>
+        <div class="col">
+          <input type="text" class="form-control" [ngClass]="getValidationClassName('lastname')"  formControlName="lastname" placeholder="Apellidos">
+          <div class="invalid-feedback">Los apellidos son requeridos</div>
+        </div>
+      </div><br>
+      <div class="row">
+        <div class="col">
+          <label>Fecha de Nacimiento</label>
+          <input type="date" class="form-control" formControlName="birthdate" [ngClass]="getValidationClassName('birthdate')"  placeholder="Nombre de usuario">
+          <div class="invalid-feedback">La fecha de nacimiento es requerida</div>
+        </div>
+        <div class="col">
+          <label for="example-date-input" class="col-form-label">Seleccione su Rol</label>
+          <div class="form-check">
+            <label class="form-check-label">
+              <input class="form-check-input" type="radio" name="exampleRadios" value="student" (click)="changeRole('student')" checked>
+              Estudiante
+            </label>
+          </div>
+          <div class="form-check">
+            <label class="form-check-label">
+              <input class="form-check-input" type="radio" name="exampleRadios" value="teacher" (click)="changeRole('teacher')">
+              Docente
+            </label>
+          </div>
+        </div>
+      </div><br>
+      <div class="text-center">
+        <button type="button" class="btn btn-secondary btn-lg">Cancelar</button>&nbsp;
+        <button type="button" class="btn btn-primary btn-lg" (click)="signIn()" [disabled]="!disableButton()">Registrarse</button>
+      </div>
+    </form>
+  </div>
+</div>
