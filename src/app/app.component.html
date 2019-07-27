@@ -1,4 +1,17 @@
-<h1 class="text-center">Enseña Me</h1><br>
+<nav class="navbar navbar-dark bg-primary">
+  <a class="navbar-brand" [routerLink]="['']" routerLinkActive="router-link-active" >Enseñame</a>
+  <span class="navbar-text">
+    <ul class="nav">
+      <li class="nav-item">
+        <a class="nav-link active" [routerLink]="['/login']" routerLinkActive="router-link-active" >Login</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/signin']" routerLinkActive="router-link-active" >Sign In</a>
+      </li>
+    </ul>
+  </span>
+</nav>
+<br>
 <div class="container">
   <router-outlet></router-outlet>
 </div>

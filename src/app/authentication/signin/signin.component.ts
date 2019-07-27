@@ -15,7 +15,7 @@ export class SigninComponent implements OnInit {
       password: ['', Validators.compose([Validators.required, Validators.pattern('')])],
       repeatPassword: ['', Validators.compose([Validators.required, Validators.pattern('')])],
       name: ['', Validators.required],
-      lastname: ['', Validators.required],
+      ci: ['', Validators.required],
       birthdate: ['', Validators.required],
       role: ['student', Validators.required]
     });
@@ -42,6 +42,20 @@ export class SigninComponent implements OnInit {
     if (!field.touched) {
       return '';
     } else if (field.touched && field.valid) {
+      return 'is-valid';
+    } else {
+      return 'is-invalid';
+    }
+  }
+
+  repeatPasswordValidationClassName() {
+    let repeatPasswordField: AbstractControl;
+    let passwordField: AbstractControl;
+    repeatPasswordField = this.signInFormgroup.get('repeatPassword');
+    passwordField = this.signInFormgroup.get('password');
+    if (!repeatPasswordField.touched  || !passwordField.touched) {
+      return '';
+    } else if ((repeatPasswordField.touched || passwordField.touched) && repeatPasswordField.value  === passwordField.value ) {
       return 'is-valid';
     } else {
       return 'is-invalid';

@@ -9,7 +9,7 @@
         </div>
         <div class="col">
           <input type="email" class="form-control" [ngClass]="getValidationClassName('email')" formControlName="email" placeholder="Email">
-          <div class="invalid-feedback">El email es requerido</div>
+          <div class="invalid-feedback">Es requerido que pongas un email valido</div>
         </div>
       </div><br>
       <div class="row">
@@ -18,8 +18,8 @@
           <div class="invalid-feedback">la contraseña debe contener almenos 8 caracteres, 1 letra mayuscula, 1 letra minuscula, 1 numero y 1 caracter especial. No puede contener espacios</div>
         </div>
         <div class="col">
-          <input type="password" class="form-control" [ngClass]="getValidationClassName('repeatPassword')"  formControlName="repeatPassword" placeholder="Repita su Contraseña">
-          <div class="invalid-feedback">La contraseña debe contener almenos 8 caracteres, 1 letra mayuscula, 1 letra minuscula, 1 numero y 1 caracter especial. No puede contener espacios</div>
+          <input type="password" class="form-control" [ngClass]="repeatPasswordValidationClassName()"  formControlName="repeatPassword" placeholder="Repita su Contraseña">
+          <div class="invalid-feedback">Ambas contraseñas deben ser la misma</div>
         </div>
       </div><br>
       <div class="row">
@@ -28,8 +28,8 @@
           <div class="invalid-feedback">El nombre es requerido</div>
         </div>
         <div class="col">
-          <input type="text" class="form-control" [ngClass]="getValidationClassName('lastname')"  formControlName="lastname" placeholder="Apellidos">
-          <div class="invalid-feedback">Los apellidos son requeridos</div>
+          <input type="text" class="form-control" [ngClass]="getValidationClassName('ci')"  formControlName="ci" placeholder="Carnet de Identidad">
+          <div class="invalid-feedback">Un carnet de identidad valido es requerido</div>
         </div>
       </div><br>
       <div class="row">
