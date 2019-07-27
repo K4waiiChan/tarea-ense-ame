@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { AuthenticationModule } from './authentication/authentication.module';
 
@@ -12,7 +13,8 @@ import { AuthenticationModule } from './authentication/authentication.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AuthenticationModule
+    AuthenticationModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

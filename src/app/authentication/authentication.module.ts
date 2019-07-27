@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { LoginComponent } from './login/login.component';
 import { SigninComponent } from './signin/signin.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { AuthenticationService } from '../services/authentication.service';
 
 
 @NgModule({
@@ -15,6 +16,9 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
   exports: [
     LoginComponent,
     SigninComponent
+  ],
+  providers: [
+    AuthenticationService
   ]
 })
 export class AuthenticationModule { }

@@ -1,1 +1,20 @@
-<p>login works!</p>
+<div class="card">
+  <div class="card-body">
+    <h2 class="text-center">Formulario de Registro</h2><br>
+    <div *ngIf="logiFailed" class="alert alert-danger" role="alert">
+        Nombre de Usuario o Password incorrectos
+    </div>
+    <form [formGroup]="loginFormgroup">
+        <div class="form-group">
+            <label>Nombre de Usuario</label>
+            <input type="email" class="form-control" formControlName="username" placeholder="Ingresa tu nombre de usuario">          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Contraseña</label>
+            <input type="password" class="form-control" formControlName="password" placeholder="Ingresa tu Contraseña">
+          </div>
+      <div class="text-center">
+        <button type="button" class="btn btn-primary btn-lg" (click)="login()" [disabled]="!loginFormgroup.valid">Entrar</button>
+      </div>
+    </form>
+  </div>
+</div>
